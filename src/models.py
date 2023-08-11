@@ -43,8 +43,8 @@ class Characters(Base):
     __tablename__ = 'characters'
     # Here we define columns for the table Characters.
     # Notice that each column is also a normal Python instance attribute.
-    id = Column(Integer, ForeignKey("favorites.id"), primary_key=True)
-    name = Column(String(250), nullable=True, unique=True)
+    id = Column(Integer, primary_key=True)
+    name = Column(String(250), ForeignKey("favorites.id"), nullable=True, unique=True)
     gender = Column(String(250), nullable=True)
     hair_color = Column(String(250), nullable=False)
     eye_color = Column(String(250), nullable=False)
