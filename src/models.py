@@ -23,28 +23,28 @@ class Planets(Base):
     # Here we define columns for the table planets.
     # Notice that each column is also a normal Python instance attribute.
     id = Column(Integer, primary_key=True)
-    name = Column(String(250), ForeignKey("favorites.id"), nullable=True, unique=True)
+    name = Column(String(250), ForeignKey("favorites.id"), nullable=False, unique=True)
     description = Column(String(250), nullable=True)
-    climate = Column(String(250), nullable=False)
-    population = Column(String(250), nullable=False)
-    orbital_period = Column(String(250), nullable=False)
-    rotation_period = Column(String(250), nullable=False)
-    diameter = Column(String(250), nullable=False)
-    terrain = Column(String(250), nullable=False)
+    climate = Column(String(250), nullable=True)
+    population = Column(String(250), nullable=True)
+    orbital_period = Column(String(250), nullable=True)
+    rotation_period = Column(String(250), nullable=True)
+    diameter = Column(String(250), nullable=True)
+    terrain = Column(String(250), nullable=True)
 
 class Characters(Base):
     __tablename__ = 'characters'
     # Here we define columns for the table Characters.
     # Notice that each column is also a normal Python instance attribute.
     id = Column(Integer, primary_key=True)
-    name = Column(String(250), ForeignKey("favorites.id"), nullable=True, unique=True)
+    name = Column(String(250), ForeignKey("favorites.id"), nullable=False, unique=True)
     gender = Column(String(250), nullable=True)
-    hair_color = Column(String(250), nullable=False)
-    eye_color = Column(String(250), nullable=False)
-    birth_year = Column(String(250), nullable=False)
-    rotation_period = Column(String(250), nullable=False)
-    height = Column(String(250), nullable=False)
-    skin_color = Column(String(250), nullable=False)   
+    hair_color = Column(String(250), nullable=True)
+    eye_color = Column(String(250), nullable=True)
+    birth_year = Column(String(250), nullable=True)
+    rotation_period = Column(String(250), nullable=True)
+    height = Column(String(250), nullable=True)
+    skin_color = Column(String(250), nullable=True)   
 
 class Favorites(Base):
     __tablename__ = 'favorites'
