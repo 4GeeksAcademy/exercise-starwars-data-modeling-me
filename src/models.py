@@ -7,14 +7,6 @@ from eralchemy2 import render_er
 
 Base = declarative_base()
 
-class Login(Base):
-    __tablename__ = 'login'
-    # Here we define columns for the table login.
-    # Notice that each column is also a normal Python instance attribute.
-    id = Column(Integer, ForeignKey("characters.name"), primary_key=True)
-    username = Column(String(250), nullable=False, unique=True)
-    password = Column(String(250), nullable=False, unique=True)
-
 class User(Base):
     __tablename__ = 'user'
     # Here we define columns for the table user.
@@ -23,6 +15,7 @@ class User(Base):
     firstname = Column(String(250), nullable=True)
     lastname = Column(String(250), nullable=True)
     username = Column(String(250), nullable=False, unique=True)
+    password = Column(String(250), nullable=False, unique=True)
     email = Column(String(250), nullable=False, unique=True)
 
 class Planets(Base):
