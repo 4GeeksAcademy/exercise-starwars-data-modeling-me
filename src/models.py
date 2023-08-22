@@ -53,6 +53,7 @@ class Favorites(Base):
     id = Column(Integer, primary_key=True)
     character_id = Column(Integer, ForeignKey("characters.id"), nullable=False, unique=True)
     planets_id = Column(Integer, ForeignKey("planets.id"), nullable=False, unique=True)
+    user_id = Column(Integer, ForeignKey("user.id"), nullable=False, unique=True)
 
 
     def to_dict(self):
